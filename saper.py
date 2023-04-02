@@ -50,14 +50,14 @@ class SaperInit:
                             pass
 
     def print_plane(self):
-        print(f"{'  |': >{len(str(self.columns))+2}}", *self.column_names)
+        print(f"{'  |': >{len(str(self.rows))+2}}", *self.column_names)
         print(
-            f"{'- X': >{len(str(self.columns))+2}}",
+            f"{'- X': >{len(str(self.rows))+2}}",
             "".join(["-" for i in range(self.columns * 2 - 1)]),
         )
         for r in range(self.rows):
             print(
-                f"{r+1: >{len(str(self.columns))}} |",
+                f"{r+1: >{len(str(self.rows))}} |",
                 end=" ",
             )
             for c in range(self.columns):
