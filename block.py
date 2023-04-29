@@ -9,7 +9,6 @@ class Block:
         )
 
     def __str__(self):
-
         if self.player_guess == 0 and self.game_in_progress:
             return chr(9608)  # white square
         elif self.player_guess == 1 and not self.is_bomb:

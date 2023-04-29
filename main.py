@@ -2,7 +2,6 @@ from saper import SaperInit
 
 
 def main():
-
     print("Input ammount of bombs, rows and columns (Example: 5 10 10): ", end="")
     b, r, c = [int(z) for z in input().split()]
     saper_plane = SaperInit(b, r, c)

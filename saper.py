@@ -24,15 +24,15 @@ class SaperInit:
     #  arbitraly placing the bombs on the plane
     def place_bombs(self):
         while self.bombs_to_place > 0:
-            self.plane[random.randint(0, self.rows - 1)][
-                random.randint(0, self.columns - 1)
-            ].is_bomb = True
-            self.bombs_to_place -= 1
+            rows = random.randint(0, self.rows - 1)
+            columns = random.randint(0, self.columns - 1)
+            if not self.plane[rows][columns].is_bomb:
+                self.plane[rows][columns].is_bomb = True
+                self.bombs_to_place -= 1
 
     #  this function updates ammount of neighbours bombs
     #  for the block after placing the bombs on the plane
     def update_adjacent_bombs(self):
-
         for r in range(self.rows):
             for c in range(self.columns):
                 if self.plane[r][c].is_bomb:
@@ -134,19 +134,23 @@ class SaperInit:
     def start_game(self):
         while self.game_status == 1:
             if self.game_status == 1:
-                column_guess = ord(input("Choose column: ")[0].upper()) - 65
-                if column_guess > self.columns or column_guess < 0:
-                    print("Wrong column!")
-                    continue
-                row_guess = int(input("Choose row: "))
-                if row_guess > self.rows or row_guess < 1:
-                    print("Wrong row!")
-                    continue
-                action = input(
-                    "What do you want to do?\n1. Click\n2. Mark as a bomb\n3. Unmark the bomb \nYour choice is to: "
-                )[0]
-                if action not in "123":
-                    print("Wrong action chosen!")
+                try:
+                    column_guess = ord(input("Choose column: ")[0].upper()) - 65
+                    if column_guess > self.columns or column_guess < 0:
+                        print("Wrong column!")
+                        continue
+                    row_guess = int(input("Choose row: "))
+                    if row_guess > self.rows or row_guess < 1:
+                        print("Wrong row!")
+                        continue
+                    action = input(
+                        "What do you want to do?\n1. Click\n2. Mark as a bomb\n3. Unmark the bomb \nYour choice is to: "
+                    )[0]
+                    if action not in "123":
+                        print("Wrong action chosen!")
+                        continue
+                except:
+                    print("Wrong input!")
                     continue
                 self.player_guess(row_guess - 1, column_guess, int(action))
 
