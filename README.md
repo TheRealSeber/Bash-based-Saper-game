@@ -1,12 +1,36 @@
-# Bash-based-Saper-game
+# Mineswapper game
 
-Hi,
+Minesweeper is a classic puzzle game where the objective is to clear a rectangular board containing hidden mines without detonating any of them. The game is won when all non-mine cells are uncovered, and lost when a mine is detonated. The game is  is written in Python and the gameplay take place in the CMD.
 
-This is my the Mineswepper project.
+## Getting started
 
-I really had fun doing this. I've added some comments in case of there was anyone who would like to jump into my code.
+### Prerequirements
+- Python 3.x installed on your computer.
 
-Very big ammount of the columns is unsupported, however you can spam as much rows as you want.
+### Installation from source code
 
-Whole game is controlled in the cmd, run python main.py to play and have fun!
+Clone the repository:
+```
+git clone https://github.com/yourusername/Commandline-Mineswapper-Game.git
+```
+Navigate to the project directory:
 
+```
+cd commandline-mineswapper-game
+```
+Run the game:
+
+```
+python main.py
+```
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
